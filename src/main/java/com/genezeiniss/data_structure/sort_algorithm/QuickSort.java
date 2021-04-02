@@ -12,6 +12,10 @@ public class QuickSort {
      * sort numbers in ascending order.
      * return sorted numbers.
      * <p>
+     * note:
+     * this method to sort regular array list is faster then others (even faster then merge sort)
+     * however, it uses more memory, because, by splitting the original list, we are creating two new lists, which allocating the memory.
+     * <p>
      * implementation:
      * 1. get first number as a pivot (index 0)
      * 2. split other elements to two sub-lists:

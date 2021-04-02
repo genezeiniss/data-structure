@@ -1,6 +1,5 @@
 package com.genezeiniss.data_structure.sort_algorithm
 
-import com.genezeiniss.data_structure.sort_algorithm.LinkedListRecursiveMergeSort
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -9,12 +8,12 @@ import static com.genezeiniss.data_structure.fixture.ListNodeFixture.constructLi
 class LinkedListRecursiveMergeSortSpec extends Specification {
 
     @Unroll
-    def "sort in ascending order with iterative merge -#scenario"() {
+    def "sort with iterative merge - #scenario"() {
         given: "nodes values"
         def listNode = constructLinkedList(values)
 
-        when: "sort in ascending order with iterative merge is called"
-        def sortedList = LinkedListRecursiveMergeSort.sortInAscendingOrderWithIterativeMerge(listNode)
+        when: "sort with iterative merge is called"
+        def sortedList = LinkedListRecursiveMergeSort.sortWithIterativeMerge(listNode)
 
         then: "list sorted as expected"
         assert sortedList == expectedList
@@ -29,12 +28,12 @@ class LinkedListRecursiveMergeSortSpec extends Specification {
     }
 
     @Unroll
-    def "sort in ascending order with recursive merge -#scenario"() {
+    def "sort with recursive merge - #scenario"() {
         given: "nodes values"
         def listNode = constructLinkedList(values)
 
-        when: "sort in ascending order with re cursive merge is called"
-        def sortedList = LinkedListRecursiveMergeSort.sortInAscendingOrderWithRecursiveMerge(listNode)
+        when: "sort with re cursive merge is called"
+        def sortedList = LinkedListRecursiveMergeSort.sortWithRecursiveMerge(listNode)
 
         then: "list sorted as expected"
         assert sortedList == expectedList

@@ -11,11 +11,11 @@ import java.util.List;
 public class LinkedListRecursiveMergeSort {
 
     /**
-     * Recursively divide linked list into sub-lists containing a single node.
-     * Repeatedly merge the sub-lists to produce sorted sub-lists until one remains.
-     * Returns a sorted linked link.
+     * recursively divide linked list into sub-lists containing a single node.
+     * repeatedly merge the sub-lists to produce sorted sub-lists until one remains.
+     * returns a sorted linked link.
      */
-    public static ListNode sortInAscendingOrderWithIterativeMerge(ListNode originalList) {
+    public static ListNode sortWithIterativeMerge(ListNode originalList) {
 
         // empty or single element list is already sorted. it called "naive sort".
         if (originalList == null || originalList.getNext() == null) {
@@ -23,12 +23,12 @@ public class LinkedListRecursiveMergeSort {
         }
 
         List<ListNode> splitLists = LinkedListSplit.splitAtMidPoint(originalList);
-        ListNode leftHalfSorted = sortInAscendingOrderWithIterativeMerge(splitLists.get(0));
-        ListNode rightHalfSorted = sortInAscendingOrderWithIterativeMerge(splitLists.get(1));
+        ListNode leftHalfSorted = sortWithIterativeMerge(splitLists.get(0));
+        ListNode rightHalfSorted = sortWithIterativeMerge(splitLists.get(1));
         return iterativeMerge(leftHalfSorted, rightHalfSorted);
     }
 
-    public static ListNode sortInAscendingOrderWithRecursiveMerge(ListNode originalList) {
+    public static ListNode sortWithRecursiveMerge(ListNode originalList) {
 
         // empty or single element list is already sorted. it called "naive sort".
         if (originalList == null || originalList.getNext() == null) {
@@ -36,15 +36,15 @@ public class LinkedListRecursiveMergeSort {
         }
 
         List<ListNode> splitLists = LinkedListSplit.splitAtMidPoint(originalList);
-        ListNode leftHalfSorted = sortInAscendingOrderWithRecursiveMerge(splitLists.get(0));
-        ListNode rightHalfSorted = sortInAscendingOrderWithRecursiveMerge(splitLists.get(1));
+        ListNode leftHalfSorted = sortWithRecursiveMerge(splitLists.get(0));
+        ListNode rightHalfSorted = sortWithRecursiveMerge(splitLists.get(1));
         return recursiveMerge(leftHalfSorted, rightHalfSorted);
     }
 
     /**
-     * Merge two linked lists, sorting by data in nodes.
-     * Returns a new merged list.
-     * <p>
+     * merge two linked lists, sorting by data in nodes.
+     * returns a new merged list.
+     *
      * implementation:
      * 1. create a new linked list that contains node from merging left and right, with fake head, that is discarded later.
      * 2. set temporary list to the head of the merged list

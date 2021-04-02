@@ -7,23 +7,23 @@ import java.util.List;
 @Component
 public class LinearSort {
 
-    public static List<Integer> sortInAscendingOrder(List<Integer> list) {
+    public static List<Integer> sortNumbers(List<Integer> numbers) {
 
         // empty or single element list is already sorted. it called "naive sort".
-        if (list.size() > 1) {
+        if (numbers.size() > 1) {
 
-            for (int index = 0; index < list.size(); index++) {
-                int value = list.get(index);
+            for (int index = 0; index < numbers.size(); index++) {
+                int value = numbers.get(index);
                 int previousIndex = index - 1;
 
                 // if value in previous index is greater then current value
-                while (previousIndex >= 0 && list.get(previousIndex) > value) {
-                    list.set((previousIndex + 1), list.get(previousIndex));
+                while (previousIndex >= 0 && numbers.get(previousIndex) > value) {
+                    numbers.set((previousIndex + 1), numbers.get(previousIndex));
                     previousIndex = (previousIndex - 1);
                 }
-                list.set((previousIndex + 1), value);
+                numbers.set((previousIndex + 1), value);
             }
         }
-        return list;
+        return numbers;
     }
 }
