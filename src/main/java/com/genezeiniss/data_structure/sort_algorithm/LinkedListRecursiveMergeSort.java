@@ -25,7 +25,7 @@ public class LinkedListRecursiveMergeSort {
         List<ListNode> splitLists = LinkedListSplit.splitAtMidPoint(originalList);
         ListNode leftHalfSorted = sortInAscendingOrderWithIterativeMerge(splitLists.get(0));
         ListNode rightHalfSorted = sortInAscendingOrderWithIterativeMerge(splitLists.get(1));
-        return iterativeMergeWithAscendingSort(leftHalfSorted, rightHalfSorted);
+        return iterativeMerge(leftHalfSorted, rightHalfSorted);
     }
 
     public static ListNode sortInAscendingOrderWithRecursiveMerge(ListNode originalList) {
@@ -38,66 +38,59 @@ public class LinkedListRecursiveMergeSort {
         List<ListNode> splitLists = LinkedListSplit.splitAtMidPoint(originalList);
         ListNode leftHalfSorted = sortInAscendingOrderWithRecursiveMerge(splitLists.get(0));
         ListNode rightHalfSorted = sortInAscendingOrderWithRecursiveMerge(splitLists.get(1));
-        return recursiveMergeWithAscendingSort(leftHalfSorted, rightHalfSorted);
+        return recursiveMerge(leftHalfSorted, rightHalfSorted);
     }
 
     /**
      * Merge two linked lists, sorting by data in nodes.
      * Returns a new merged list.
+     * <p>
+     * implementation:
+     * 1. create a new linked list that contains node from merging left and right, with fake head, that is discarded later.
+     * 2. set temporary list to the head of the merged list
+     * 3. iterate over left and right until we reach the tail node of either (while left or right list's tail is not passed)
+     * * 3.1 if left list is null (loop passed the left tail), add the node from right list to merged list
+     * * 3.2 if right list is null (loop passed the right tail), add the node from left to merged list
+     * * 3.3 otherwise --> obtain node values to perform comparison
+     * * * 3.3.1 if value on left is less then right, set temporary list to left node; else set temporary list to the right node
+     * * 3.4 move temporary list to the next node
+     * 4. discard fake head by setting first merged node as head
+     * 5. print and return merged list
      */
-    public static ListNode iterativeMergeWithAscendingSort(ListNode leftList, ListNode rightList) {
+    public static ListNode iterativeMerge(ListNode leftList, ListNode rightList) {
 
-        // create a new linked list that contains node from merging left and right,
-        // with fake head, that is discarded later.
         ListNode mergedList = new ListNode(0);
-
-        // set temporary list to the head of the merged list
         ListNode temporaryList = mergedList;
 
-        // iterate over left and right until we reach the tail node of either
         while (leftList != null || rightList != null) {
 
-            // if left list is null, we're passed the tail
-            // add the node from right list to merged list
             if (leftList == null) {
                 temporaryList.setNext(rightList);
                 rightList = rightList.getNext();
 
-                // if left list is null, we're passed the tail
-                // add the tail node from left to merged list
             } else if (rightList == null) {
                 temporaryList.setNext(leftList);
                 leftList = leftList.getNext();
 
-                // not at either tail node
-                // obtain node values to perform comparison
             } else {
-
-                // if value on left is less then right, set temporary list to left node
                 if (leftList.getValue() < rightList.getValue()) {
                     temporaryList.setNext(leftList);
                     leftList = leftList.getNext();
 
-                    // set temporary list to left node
                 } else {
                     temporaryList.setNext(rightList);
                     rightList = rightList.getNext();
                 }
             }
-
-            // move temporary list to next node
             temporaryList = temporaryList.getNext();
         }
-
-
-        // discard fake head by setting first merged node as head
         mergedList = mergedList.getNext();
 
         ListNodeUtil.printList("merged list node is: ", mergedList);
         return mergedList;
     }
 
-    public static ListNode recursiveMergeWithAscendingSort(ListNode leftList, ListNode rightList) {
+    public static ListNode recursiveMerge(ListNode leftList, ListNode rightList) {
 
         ListNode mergedList;
 
@@ -110,10 +103,10 @@ public class LinkedListRecursiveMergeSort {
 
         if (leftList.getValue() < rightList.getValue()) {
             mergedList = leftList;
-            mergedList.setNext(recursiveMergeWithAscendingSort(leftList.getNext(), rightList));
+            mergedList.setNext(recursiveMerge(leftList.getNext(), rightList));
         } else {
             mergedList = rightList;
-            mergedList.setNext(recursiveMergeWithAscendingSort(leftList, rightList.getNext()));
+            mergedList.setNext(recursiveMerge(leftList, rightList.getNext()));
         }
         ListNodeUtil.printList("merged list node is: ", mergedList);
         return mergedList;
