@@ -43,7 +43,7 @@ public class QuickSort {
             }
         });
 
-        System.out.printf("%15s %1s %-15s\n", lessThanPivot, pivot, greaterThanPivot);
+        System.out.printf("%15s %1s %-15s%n", lessThanPivot, pivot, greaterThanPivot);
 
         List<Integer> sortedNumbers = new ArrayList<>(sortNumbers(lessThanPivot));
         sortedNumbers.add(pivot);
