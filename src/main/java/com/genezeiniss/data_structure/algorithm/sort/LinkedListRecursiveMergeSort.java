@@ -1,6 +1,6 @@
-package com.genezeiniss.data_structure.sort_algorithm;
+package com.genezeiniss.data_structure.algorithm.sort;
 
-import com.genezeiniss.data_structure.split_algorithm.LinkedListSplit;
+import com.genezeiniss.data_structure.algorithm.split.LinkedListSplit;
 import com.genezeiniss.data_structure.structure.ListNode;
 import com.genezeiniss.data_structure.utils.ListNodeUtil;
 import org.springframework.stereotype.Component;

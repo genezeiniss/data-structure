@@ -1,4 +1,4 @@
-package com.genezeiniss.data_structure.sort_algorithm;
+package com.genezeiniss.data_structure.algorithm.sort;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package com.genezeiniss.data_structure.sort_algorithm;
+package com.genezeiniss.data_structure.algorithm.sort;
 
 import org.springframework.stereotype.Component;
 

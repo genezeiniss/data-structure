@@ -1,4 +1,4 @@
-package com.genezeiniss.data_structure.split_algorithm;
+package com.genezeiniss.data_structure.algorithm.split;
 
 import com.genezeiniss.data_structure.structure.ListNode;
 import com.genezeiniss.data_structure.utils.ListNodeUtil;

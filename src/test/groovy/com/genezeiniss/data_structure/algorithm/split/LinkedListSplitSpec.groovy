@@ -1,4 +1,4 @@
-package com.genezeiniss.data_structure.split_algorithm
+package com.genezeiniss.data_structure.algorithm.split
 
 import spock.lang.Specification
 import spock.lang.Unroll

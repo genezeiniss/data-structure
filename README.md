@@ -3,7 +3,7 @@
 Data structure is **data storage format**. It is the collection of values, and the format they are stored in.  
 The relationships between the values in the collection, as well as the operations applied on the data stored in the structure.
 
-# array
+## array
 
 Array is a data structure, that stores a collection of values, where each value is referenced using an index (or a key).  
 In Java, array is a **homogeneous** containers. It means, they only can contain values of the same type. The fundamental concept of the
@@ -14,7 +14,7 @@ It is best to use an ArrayList when:
 1. You want to access random items frequently.
 2. You only need to add or remove elements at the end of the list.
 
-# linked_list
+## linked_list
 
 Linked list is a linear data structure, where each element in the list, is contained in a separate object called a **node**. A node models
 two pieces of information:
@@ -33,3 +33,29 @@ It is best to use a LinkedList when:
 
 1. You only use the list by looping through it instead of accessing random items.
 2. You frequently need to add and remove items from the beginning, middle or end of the list.
+
+# algorithm
+
+A set of steps or instructions for completing a task.  
+Algorithm efficiency have two aspects:
+
+1. Time complexity - how long it takes to complete a task (running time of an algorithm).
+2. Space complexity - amount of memory take from the computer, while working on a task.
+
+## search strategies
+
+### linear search
+
+Linear search ran on the array and sequentially check each value, till target value is found.
+
+1. Best case: target value is a first element in the list (index 0).
+2. Worst case: target value is a last element in the list or is out of the list (not exist).
+
+### binary search
+
+Binary search, also known as **half-interval search**. Binary search compares the target value to the middle element of the array.  
+Pre-conditions:
+
+1. The list must be sorted.
+2. The steps need to be distinct.
+3. The algorithm should produce a result.

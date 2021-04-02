@@ -1,20 +1,16 @@
-package com.genezeiniss.data_structure.sort_algorithm
+package com.genezeiniss.data_structure.algorithm.sort
 
 import spock.lang.Specification
 import spock.lang.Unroll
 
-class RecursiveMergeSortSpec extends Specification {
+class SelectionSortSpec extends Specification {
 
     @Unroll
-    def "sort numbers in ascending order - #scenario"() {
-        when: "sort in ascending order method is called"
-        def sortedList = RecursiveMergeSort.sortNumbers(unsortedList)
+    def "sort numbers in ascending order"() {
+        when: "sort numbers method is called"
+        def sortedList = SelectionSort.sortNumbers(unsortedList)
 
-        then: "sorted list size expected to be equal to unsorted list"
-        if (sortedList != null)
-            assert sortedList.size() == unsortedList.size()
-
-        and: "list expected to be sorted as expected"
+        then: "list expected to be sorted as expected"
         assert sortedList == expectedSortedList
 
         where:

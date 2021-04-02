@@ -1,16 +1,20 @@
-package com.genezeiniss.data_structure.sort_algorithm
+package com.genezeiniss.data_structure.algorithm.sort
 
 import spock.lang.Specification
 import spock.lang.Unroll
 
-class SelectionSortSpec extends Specification {
+class QuickSortSpec extends Specification {
 
     @Unroll
     def "sort numbers in ascending order"() {
         when: "sort numbers method is called"
-        def sortedList = SelectionSort.sortNumbers(unsortedList)
+        def sortedList = QuickSort.sortNumbers(unsortedList)
 
-        then: "list expected to be sorted as expected"
+        then: "sorted list size expected to be equal to unsorted list"
+        if (sortedList != null)
+            assert sortedList.size() == unsortedList.size()
+
+        and: "list expected to be sorted as expected"
         assert sortedList == expectedSortedList
 
         where:

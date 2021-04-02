@@ -1,4 +1,4 @@
-package com.genezeiniss.data_structure.sort_algorithm
+package com.genezeiniss.data_structure.algorithm.sort
 
 import spock.lang.Specification
 import spock.lang.Unroll
