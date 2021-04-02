@@ -1,5 +1,6 @@
 package com.genezeiniss.data_structure.sort_algorithm
 
+import com.genezeiniss.data_structure.sort_algorithm.LinearSort
 import spock.lang.Specification
 
 class LinearSortSpec extends Specification {
