@@ -1,8 +1,10 @@
 package com.genezeiniss.data_structure.split_algorithm
 
-import com.genezeiniss.data_structure.structure.ListNode
+
 import spock.lang.Specification
 import spock.lang.Unroll
+
+import static com.genezeiniss.data_structure.fixture.ListNodeFixture.constructLinkedList
 
 class LinkedListSplitSpec extends Specification {
 
@@ -52,16 +54,5 @@ class LinkedListSplitSpec extends Specification {
         "list has odd number of nodes"  | [1, 2, 3, 4, 5, 6]    || constructLinkedList([1, 2, 3])    | constructLinkedList([4, 5, 6])
         "list is empty"                 | []                    || constructLinkedList([])           | constructLinkedList([])
         "list has one element"          | [1]                   || constructLinkedList([1])          | null
-    }
-
-    static ListNode constructLinkedList(List values) {
-
-        ListNode head = null
-
-        for (int i = values.size() - 1; i >= 0; i--) {
-            head = new ListNode(values[i] as int, head)
-        }
-
-        return head
     }
 }
