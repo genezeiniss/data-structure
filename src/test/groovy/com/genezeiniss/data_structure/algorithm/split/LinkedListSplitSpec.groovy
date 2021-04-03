@@ -19,7 +19,7 @@ class LinkedListSplitSpec extends Specification {
         def firstList = splitList[0]
         def secondList = splitList[1]
 
-        and: "each list expected to contain alternating nodes from poriginal list"
+        and: "each list expected to contain alternating nodes from original list"
         assert firstList == expectedFirstList
         assert secondList == expectedSecondList
 
