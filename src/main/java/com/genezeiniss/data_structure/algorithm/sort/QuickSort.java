@@ -24,18 +24,18 @@ public class QuickSort {
      * 3. sort sort sub-lists by calling to 'sort numbers' function recursively.
      * 4. combine sorted lists with pivot and return: [less than pivot] + pivot + [greater than pivot]
      */
-    public static List<Integer> sortNumbers(List<Integer> numbers) {
+    public static List<Integer> sortNumbers(List<Integer> unsortedList) {
 
         // naive sort
-        if (numbers == null || numbers.size() <= 1) {
-            return numbers;
+        if (unsortedList == null || unsortedList.size() <= 1) {
+            return unsortedList;
         }
 
-        int pivot = numbers.get(0);
+        int pivot = unsortedList.get(0);
         List<Integer> lessThanPivot = new ArrayList<>();
         List<Integer> greaterThanPivot = new ArrayList<>();
 
-        numbers.subList(1, numbers.size()).forEach(number -> {
+        unsortedList.subList(1, unsortedList.size()).forEach(number -> {
             if (number <= pivot) {
                 lessThanPivot.add(number);
             } else {
@@ -48,6 +48,33 @@ public class QuickSort {
         List<Integer> sortedNumbers = new ArrayList<>(sortNumbers(lessThanPivot));
         sortedNumbers.add(pivot);
         sortedNumbers.addAll(sortNumbers(greaterThanPivot));
+        return sortedNumbers;
+    }
+
+    public static List<String> sortString(List<String> unsortedList) {
+
+        // naive sort
+        if (unsortedList == null || unsortedList.size() <= 1) {
+            return unsortedList;
+        }
+
+        String pivot = unsortedList.get(0);
+        List<String> lessThanPivot = new ArrayList<>();
+        List<String> greaterThanPivot = new ArrayList<>();
+
+        unsortedList.subList(1, unsortedList.size()).forEach(value -> {
+            if (value.compareTo(pivot) <= 0) {
+                lessThanPivot.add(value);
+            } else {
+                greaterThanPivot.add(value);
+            }
+        });
+
+        System.out.printf("%15s %1s %-15s%n", lessThanPivot, pivot, greaterThanPivot);
+
+        List<String> sortedNumbers = new ArrayList<>(sortString(lessThanPivot));
+        sortedNumbers.add(pivot);
+        sortedNumbers.addAll(sortString(greaterThanPivot));
         return sortedNumbers;
     }
 }

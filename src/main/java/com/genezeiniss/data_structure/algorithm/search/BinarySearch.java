@@ -15,18 +15,38 @@ public class BinarySearch {
      */
     public static int iterativeSearchForNumber(List<Integer> searchRange, int target) {
 
-        int firstElementIndex = 0;
-        int lastElementIndex = searchRange.size() - 1;
+        int firstIndex = 0;
+        int lastIndex = searchRange.size() - 1;
 
-        while (firstElementIndex <= lastElementIndex) {
-            int midElementIndex = (firstElementIndex + lastElementIndex) / 2;
+        while (firstIndex <= lastIndex) {
+            int midIndex = (firstIndex + lastIndex) / 2;
 
-            if (searchRange.get(midElementIndex) == target) {
-                return midElementIndex;
-            } else if (searchRange.get(midElementIndex) < target) {
-                firstElementIndex = midElementIndex + 1;
+            if (searchRange.get(midIndex) == target) {
+                return midIndex;
+            } else if (searchRange.get(midIndex) < target) {
+                firstIndex = midIndex + 1;
             } else {
-                lastElementIndex = midElementIndex - 1;
+                lastIndex = midIndex - 1;
+            }
+        }
+
+        return -1;
+    }
+
+    public static int iterativeSearchForString(List<String> searchRange, String target) {
+
+        int firstIndex = 0;
+        int lastIndex = searchRange.size() - 1;
+
+        while (firstIndex <= lastIndex) {
+            int midIndex = (firstIndex + lastIndex) / 2;
+
+            if (searchRange.get(midIndex).equals(target)) {
+                return midIndex;
+            } else if (searchRange.get(midIndex).compareTo(target) < 0) {
+                firstIndex = midIndex + 1;
+            } else {
+                lastIndex = midIndex - 1;
             }
         }
 

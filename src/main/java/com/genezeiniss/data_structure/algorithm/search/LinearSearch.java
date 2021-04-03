@@ -17,4 +17,15 @@ public class LinearSearch {
 
         return -1;
     }
+
+    public static int searchForString(List<String> searchRange, String target) {
+
+        for (int i = 0; i < searchRange.size(); i++) {
+            if (target.equals(searchRange.get(i))) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
 }

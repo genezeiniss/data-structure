@@ -1,9 +1,12 @@
 package com.genezeiniss.data_structure.algorithm.search
 
+import com.github.javafaker.Faker
 import spock.lang.Specification
 import spock.lang.Unroll
 
 class BinarySearchSpec extends Specification {
+
+    Faker faker = new Faker()
 
     @Unroll
     def "iterative search for number - #scenario"() {
@@ -21,6 +24,27 @@ class BinarySearchSpec extends Specification {
         "list is sorted ascending; target is not included"                                       | [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] | 11     || -1
         "list is not sorted; target included - expected index is -1, since list must be sorted!" | [1, 2, 7, 4, 5, 6, 3, 8, 9, 10] | 3      || -1
         "list is empty; "                                                                        | []                              | 1      || -1
+    }
+
+    def "iterative search for string - #scenario"() {
+        given: "list of full names"
+        def names = []
+        25.times {
+            names.add(String.format("%s %s", faker.name().firstName(), faker.name().lastName()))
+        }
+
+        and: "add target name to the list"
+        def target = "Gene Zeiniss"
+        names.add(target)
+
+        and: "names list is sorted"
+        names = names.sort()
+
+        when: "iterative search for string is called on sorted list"
+        def targetIndex = BinarySearch.iterativeSearchForString(names as List<String>, target)
+
+        then: "target name index expected to be returned"
+        assert names[targetIndex] == target
     }
 
     @Unroll
