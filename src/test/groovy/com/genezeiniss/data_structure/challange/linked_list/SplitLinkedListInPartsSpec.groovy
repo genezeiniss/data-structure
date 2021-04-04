@@ -1,5 +1,6 @@
-package com.genezeiniss.data_structure.challange
+package com.genezeiniss.data_structure.challange.linked_list
 
+import com.genezeiniss.data_structure.challange.linked_list.SplitLinkedListInParts
 import spock.lang.Specification
 import spock.lang.Unroll
 

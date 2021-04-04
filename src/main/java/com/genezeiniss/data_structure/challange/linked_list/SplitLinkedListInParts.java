@@ -1,4 +1,4 @@
-package com.genezeiniss.data_structure.challange;
+package com.genezeiniss.data_structure.challange.linked_list;
 
 import com.genezeiniss.data_structure.structure.ListNode;
 import com.genezeiniss.data_structure.utils.ListNodeUtil;

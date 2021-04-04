@@ -1,6 +1,6 @@
 package com.genezeiniss.data_structure;
 
-import com.genezeiniss.data_structure.challange.SplitLinkedListInParts;
+import com.genezeiniss.data_structure.challange.linked_list.SplitLinkedListInParts;
 import com.genezeiniss.data_structure.structure.ListNode;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

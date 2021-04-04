@@ -15,6 +15,6 @@ class LinearSortSpec extends Specification {
         assert sortedList.size() == unsortedList.size()
 
         and: "list expected to be sorted in ascending order"
-        assert sortedList == unsortedList.sort()
+        assert sortedList == [1, 2, 3, 4, 5]
     }
 }
