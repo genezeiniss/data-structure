@@ -1,9 +1,8 @@
 package com.genezeiniss.data_structure;
 
-import com.genezeiniss.data_structure.challange.linked_list.SplitLinkedListInParts;
-import com.genezeiniss.data_structure.structure.ListNode;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.Arrays;
 import java.util.List;
 
 @SpringBootApplication
@@ -13,20 +12,11 @@ public class DataStructureApplication {
 
         //SpringApplication.run(DataStructureApplication.class, args);
 
-        //ListNode root = constructLinkedList(List.of(1, 2, 3));
-        ListNode root = constructLinkedList(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
-        //ListNode root = constructLinkedList(List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11));
-        List<ListNode> splitList = SplitLinkedListInParts.splitListToParts(root, 1);
+        List<Integer> arr = Arrays.asList(0, 0, 0, 0, 0, 0, 0, 1);
+        duplicateZeros(arr);
     }
 
-    private static ListNode constructLinkedList(List<Integer> values) {
+    public static void duplicateZeros(List<Integer> array) {
 
-        ListNode head = null;
-
-        for (int i = values.size() - 1; i >= 0; i--) {
-            head = new ListNode(values.get(i), head);
-        }
-
-        return head;
     }
 }

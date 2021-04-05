@@ -1,6 +1,5 @@
 package com.genezeiniss.data_structure.challange.array
 
-
 import spock.lang.Specification
 
 class SquaresOfSortedArraySpec extends Specification {
