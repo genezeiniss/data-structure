@@ -38,7 +38,7 @@ public class DuplicateZeros {
             }
         }
 
-        // Start backwards from the last element which would be part of new array.
+        // start backwards from the last element which would be part of new array.
         int reassignedLastIndex = lastIndex - possibleDuplicates;
 
         // run on the array from the right (reassigned last index) to the left and copy zero twice, and non zero once.

@@ -6,13 +6,33 @@ import spock.lang.Unroll
 class MergeSortedArraySpec extends Specification {
 
     @Unroll
-    def "merge"() {
+    def "merge - first approach"() {
         given: "arrays"
         def first = firstArray
         def second = secondArray
 
         when: "merge method is called"
-        MergeSortedArray.merge(first, elementsInFirst, second, elementsInSecond)
+        MergeSortedArray.firstApproach(first, elementsInFirst, second, elementsInSecond)
+
+        then: "two arrays expected to be merged and sorted"
+        assert first == expectedSortedArray
+
+        where:
+        firstArray            | elementsInFirst | secondArray   | elementsInSecond || expectedSortedArray
+        [1, 2, 3, 0, 0, 0]    | 3               | [2, 5, 6]     | 3                || [1, 2, 2, 3, 5, 6]
+        [1]                   | 1               | []            | 0                || [1]
+        [0, 1, 2, 3, 0, 0, 0] | 4               | [0, 1, 4]     | 3                || [0, 0, 1, 1, 2, 3, 4]
+        [1, 2, 0, 0, 0, 0]    | 2               | [3, 8, 9, 10] | 4                || [1, 2, 3, 8, 9, 10]
+    }
+
+    @Unroll
+    def "merge - second approach"() {
+        given: "arrays"
+        def first = firstArray
+        def second = secondArray
+
+        when: "merge method is called"
+        MergeSortedArray.secondApproach(first, elementsInFirst, second, elementsInSecond)
 
         then: "two arrays expected to be merged and sorted"
         assert first == expectedSortedArray

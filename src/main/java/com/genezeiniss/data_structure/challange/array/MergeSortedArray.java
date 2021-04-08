@@ -17,7 +17,10 @@ import java.util.List;
  */
 public class MergeSortedArray {
 
-    public static void merge(List<Integer> firstArray, int firstSize, List<Integer> secondArray, int secondSize) {
+    /**
+     * with additional array creation
+     */
+    public static void firstApproach(List<Integer> firstArray, int firstSize, List<Integer> secondArray, int secondSize) {
 
         int arrayCapacity = firstSize + secondSize;
         List<Integer> sortedList = new ArrayList<>(arrayCapacity);
@@ -58,5 +61,35 @@ public class MergeSortedArray {
             firstArray.set(i, sortedList.get(i));
         }
         System.out.println(firstArray);
+    }
+
+    /**
+     * without additional array creation
+     */
+    public static void secondApproach(List<Integer> first, int firstSize, List<Integer> second, int secondSize) {
+
+        int firstIndex = firstSize - 1;
+        int secondIndex = secondSize - 1;
+        int index = first.size() - 1;
+
+        while (index >= 0) {
+
+            if (firstIndex < 0) {
+                first.set(index, second.get(secondIndex--));
+
+            } else if (secondIndex < 0) {
+                first.set(index, first.get(firstIndex--));
+            } else {
+                if (first.get(firstIndex) > second.get(secondIndex)) {
+                    first.set(index, first.get(firstIndex--));
+                } else {
+                    first.set(index, second.get(secondIndex--));
+                }
+            }
+
+            index--;
+        }
+
+        System.out.println(first);
     }
 }
