@@ -7,14 +7,11 @@ class DuplicateZerosSpec extends Specification {
 
     @Unroll
     def "duplicate zeros"() {
-        given: "array"
-        def array = input
-
         when: "duplicate zeros method is called"
-        DuplicateZeros.duplicateZeros(array)
+        DuplicateZeros.duplicateZeros(input)
 
         then: "zeros in original array expected to be duplicated"
-        assert array == expectedArray
+        assert input == expectedArray
 
         where:
         input                    || expectedArray
