@@ -1,4 +1,4 @@
-package com.genezeiniss.data_structure.challange.array
+package com.genezeiniss.data_structure.challange.array.insert
 
 import spock.lang.Specification
 import spock.lang.Unroll

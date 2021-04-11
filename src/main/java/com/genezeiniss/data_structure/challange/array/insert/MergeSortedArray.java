@@ -1,4 +1,4 @@
-package com.genezeiniss.data_structure.challange.array;
+package com.genezeiniss.data_structure.challange.array.insert;
 
 import java.util.ArrayList;
 import java.util.List;

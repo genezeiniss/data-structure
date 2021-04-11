@@ -1,4 +1,4 @@
-package com.genezeiniss.data_structure.challange.array;
+package com.genezeiniss.data_structure.challange.array.linear_search;
 
 import java.util.List;
 

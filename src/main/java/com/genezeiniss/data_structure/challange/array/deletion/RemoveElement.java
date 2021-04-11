@@ -1,4 +1,4 @@
-package com.genezeiniss.data_structure.challange.array;
+package com.genezeiniss.data_structure.challange.array.deletion;
 
 import java.util.List;
 
