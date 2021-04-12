@@ -55,7 +55,6 @@ public class RemoveDuplicatesFromSortedArray {
         int writePointer = 1;
 
         // Go through each element in the Array.
-
         for (int readPointer = 1; readPointer < nums.size(); readPointer++) {
 
             // If the current element we're reading is *different* to the previous
