@@ -48,17 +48,14 @@ public class RemoveElement {
 
     public static int removeElement_secondApproach(List<Integer> nums, int val) {
 
-        int i = 0;
+        int writePointer = 0;
 
-        for (int j = 0; j < nums.size(); j++) {
-            if (nums.get(j) != val) {
-                nums.set(i, nums.get(j));
-                i++;
+        for (int readPointer = 0; readPointer < nums.size(); readPointer++) {
+            if (nums.get(readPointer) != val) {
+                nums.set(writePointer, nums.get(readPointer));
+                writePointer++;
             }
         }
-        return i;
+        return writePointer;
     }
-
-
-    //[0, 1, 2, 2, 3, 0, 4, 2]
 }
